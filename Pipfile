@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-community = "*"
+nemoguardrails = "*"
+langchain-core = "*"
+chromadb = "*"
+bs4 = "*"
+langchain-experimental = "*"
+langchain-ollama = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
