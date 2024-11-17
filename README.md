@@ -20,6 +20,7 @@
 |Type  |Query        |Identifier|Next Best Action|
 |------|-------------|----------|----------------|
 |Generic|Find the top reported alarms|NA|Locate events monitor (filter applied)|
+|Generic|Find the recent correlations detected|NA|Locate events monitor(filter applied)|
 |Specific|Find the occurences of alarm 'BGP session down'|'BGP session down'|Locate events monitor (filter applied)|
 |Specific|Find the insights for alarm xyz|xyz|Locate events monitor(filter applied)|
 |Specific|How to resolve the alarm xyz|xyz|Create ticket|
