@@ -10,7 +10,7 @@ from langchain.output_parsers import PydanticOutputParser
 
 class Summary(BaseModel):
     subject: str = Field(description="The central concept about which the query is asked. Should be one of site, node, alarm, ticket")
-    references: list[str] = Field(description="The additional concepts which provide context to the central concept in the query. Choose only if present in the query. Should use only the following terms: Site, Node, Alarm, Ticket.")
+    references: list[str] = Field(description="The additional concepts which provide context to the central concept in the query. Choose only if present in the query. Each entry should be one of Site, Node, Alarm, Ticket.")
     keywords: list[str] = Field(description="Important words that describe the query. Choose only those words that are actually present in the query.")
     identifier: str = Field(description="Identifier for the central concept if present in the query, blank if none is present")
 
@@ -24,8 +24,8 @@ A 'site' can have many devices or nodes and is identified by a 'site id' that ha
 Site related questions can be generic network wide or about a specific site that is identified using a 'site id'
 A 'device' may also be referred to as a 'node'.
 A device performs a networking function.
-The 'device' or 'node' will have lots of performance indicator attributes that can be monitored such as 'bandwidth' 
-to detect any anomalies or unusual behaviour in the network.
+The 'device' or 'node' will have lots of performance indicator attributes that can be monitored such as 'bandwidth'. 
+User might be interested to know if any anomalies are detected or any unusual behaviour is reported on the node.
 A 'device' is identified by a 'device id'. 
 The 'device' or 'node' may also raise 'alarms' when an unusual event occurs. 
 'bad-link-detected', 'lagdown' are some example alarms reported in devices of 'OLT' type.
@@ -64,7 +64,8 @@ query_list = [
               "What are the top affected nodes?",
               "Any anomalies detected?",
               "What are the top most occuring alarms?",
-              "What are the recently identified correlations in the site abc-123?"
+              "What are the recently identified correlations in the site abc-123?",
+              "What are the top affected nodes in the site abc-456"
               
 ]
 for query in query_list:
